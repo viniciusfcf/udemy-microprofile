@@ -1,0 +1,30 @@
+<server description="Server Open Liberty">
+
+  <featureManager>
+    <!-- 
+      https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feat.html 
+      https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.liberty.autogen.nd.doc/ae/rwlp_feature_microProfile-3.3.html
+    <feature>microProfile-3.3</feature>
+    -->
+    <feature>cdi-2.0</feature>
+    <feature>jaxrs-2.1</feature>
+    <feature>mpConfig-1.4</feature>
+    
+    <!-- 
+    <feature>mpHealth-2.1</feature>
+    <feature>mpMetrics-2.2</feature> 
+    -->
+  </featureManager>
+
+  <applicationManager autoExpand="true" />
+
+  <mpMetrics authentication="false" />
+
+  <variable name="default.http.port" defaultValue="9080"/>
+  <variable name="default.https.port" defaultValue="9443"/>
+
+  <httpEndpoint host="*" httpPort="${default.http.port}" httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
+  <keyStore id="defaultKeyStore" password="OpenLiberty" />
+
+  <webApplication location="liberty.war" contextRoot="/"/>
+</server>
