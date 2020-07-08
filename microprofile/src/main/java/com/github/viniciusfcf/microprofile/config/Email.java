@@ -1,4 +1,4 @@
-package com.github.viniciusfcf.microprofile;
+package com.github.viniciusfcf.microprofile.config;
 
 public class Email {
     
