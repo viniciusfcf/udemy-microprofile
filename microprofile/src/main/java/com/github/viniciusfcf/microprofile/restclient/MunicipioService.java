@@ -1,5 +1,7 @@
 package com.github.viniciusfcf.microprofile.restclient;
 
+import java.util.concurrent.CompletionStage;
+
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -14,6 +16,8 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 @RegisterRestClient(configKey = "correios")
 @ClientHeaderParam(name = "UtilizandoClientHeaderParamInterface", value = "X1")
 @RegisterClientHeaders(DefaultClientHeadersFactoryImpl.class)
+//Funciona nos dois
+// @RegisterProvider(CustomRequestFilter.class)
 public interface MunicipioService {
     
     @POST
@@ -22,6 +26,11 @@ public interface MunicipioService {
     public MunicipioDTO adicionar(
         @HeaderParam("UtilizandoHeaderParam")
         String header,
+        @QueryParam("idUF")Integer idUF, 
+        MunicipioDTO municipio);
+
+    @POST
+    public CompletionStage<MunicipioDTO> adicionarAsync(
         @QueryParam("idUF")Integer idUF, 
         MunicipioDTO municipio);
 

@@ -2,12 +2,15 @@ package com.github.viniciusfcf.microprofile.restclient;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.concurrent.CompletionStage;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.rest.client.RestClientBuilder;
 import org.eclipse.microprofile.rest.client.RestClientDefinitionException;
@@ -27,6 +30,16 @@ public class MPRestClientResource {
         Integer idUF  = 222;
         MunicipioDTO municipio = new MunicipioDTO(null, "Maceio", 12000);
 		return service.adicionar("Valor1", idUF, municipio).toString();
+    }
+
+    @GET
+    @Path("async")
+    @Produces(MediaType.APPLICATION_JSON)
+    public CompletionStage<MunicipioDTO> adicionarComGetAsync() {
+        Integer idUF  = 222;
+        MunicipioDTO municipio = new MunicipioDTO(null, "Maceio", 12000);
+        return service.adicionarAsync(idUF, municipio);
+        
     }
 
 
