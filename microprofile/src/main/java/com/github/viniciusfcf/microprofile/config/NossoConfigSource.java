@@ -16,7 +16,7 @@ public class NossoConfigSource implements ConfigSource {
 
 	@Override
 	public String getValue(String propertyName) {
-		System.out.println("-----"+propertyName);
+		// System.out.println("-----"+propertyName);
 		return propriedades.get(propertyName);
 	}
 

@@ -5,10 +5,13 @@
       https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feat.html 
       https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.liberty.autogen.nd.doc/ae/rwlp_feature_microProfile-3.3.html
     <feature>microProfile-3.3</feature>
+
+    <variable name="…​" value="…​"/>
     -->
     <feature>cdi-2.0</feature>
     <feature>jaxrs-2.1</feature>
     <feature>mpConfig-1.4</feature>
+    <feature>mpRestClient-1.4</feature>
     
     <!-- 
     <feature>mpHealth-2.1</feature>
