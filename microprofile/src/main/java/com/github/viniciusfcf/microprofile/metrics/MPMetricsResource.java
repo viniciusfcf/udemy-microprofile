@@ -9,9 +9,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.metrics.Counter;
-import org.eclipse.microprofile.metrics.Metadata;
 import org.eclipse.microprofile.metrics.MetricRegistry;
+import org.eclipse.microprofile.metrics.annotation.Metric;
 import org.eclipse.microprofile.metrics.annotation.RegistryType;
+import org.eclipse.microprofile.metrics.annotation.SimplyTimed;
 
 @Path("/mp-metrics")
 @ApplicationScoped
@@ -24,9 +25,9 @@ public class MPMetricsResource {
     // ClasseCustomizada classeCustomizada;
 
     //METRIC
-    // @Inject
-    // @Metric(name = "counter")
-    // Counter counter;
+    @Inject
+    @Metric(name = "counter")
+    Counter counter;
 
     // @Inject
     // @Metric(name = "meter")
@@ -100,7 +101,7 @@ public class MPMetricsResource {
     @Path("criar-metricas")
     @Produces(MediaType.TEXT_PLAIN)
     public String criar() {
-        Counter contador = baseApplication.counter("contador-2");
+        Counter contador = metricApplication.counter("contador-2");
         contador.inc();
         // Metadata metadata = Metadata.builder()
         //     .withName("contador-2").withUnit("kg").build();

@@ -14,7 +14,10 @@
     <feature>mpRestClient-1.4</feature>
     <feature>mpOpenTracing-1.3</feature>
     <feature>mpMetrics-2.3</feature>
+    <feature>mpFaultTolerance-2.1</feature>
+    
     <!-- 
+
     <feature>mpHealth-2.1</feature>
     <feature>mpMetrics-2.2</feature> 
     -->
