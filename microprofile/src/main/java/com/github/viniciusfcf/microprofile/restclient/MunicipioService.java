@@ -2,11 +2,13 @@ package com.github.viniciusfcf.microprofile.restclient;
 
 import java.util.concurrent.CompletionStage;
 
+import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
+import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.rest.client.annotation.ClientHeaderParam;
 import org.eclipse.microprofile.rest.client.annotation.RegisterClientHeaders;
 import org.eclipse.microprofile.rest.client.ext.DefaultClientHeadersFactoryImpl;
@@ -47,5 +49,14 @@ public interface MunicipioService {
         @QueryParam("idUF")Integer idUF;
 
         MunicipioDTO municipio;
+    }
+
+    //Exemplo utilizado de fault tolerance em um rest client
+    @GET
+    @Fallback(fallbackMethod = "criarMunicipioFixo")
+    public MunicipioDTO buscarMunicipio();
+    
+    default MunicipioDTO criarMunicipioFixo() {
+        return new MunicipioDTO(1, "Campina Grande", 20000);
     }
 }
