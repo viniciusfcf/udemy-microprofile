@@ -7,14 +7,11 @@ import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import com.github.viniciusfcf.microprofile.restclient.MunicipioDTO;
 import com.github.viniciusfcf.microprofile.restclient.MunicipioService;
 
-import org.eclipse.microprofile.faulttolerance.Fallback;
-import org.eclipse.microprofile.faulttolerance.Timeout;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 @Path("/mp-fault")

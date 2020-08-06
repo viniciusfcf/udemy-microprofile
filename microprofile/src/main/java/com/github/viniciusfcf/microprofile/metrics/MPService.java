@@ -1,7 +1,6 @@
 package com.github.viniciusfcf.microprofile.metrics;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Produces;
 
 @ApplicationScoped
 // @Counted

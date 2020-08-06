@@ -22,6 +22,11 @@
     <liberty.var.default.http.port>9080</liberty.var.default.http.port>
     <liberty.var.default.https.port>9443</liberty.var.default.https.port>
     <liberty.var.app.context.root>/</liberty.var.app.context.root>
+    <!-- Derby library -->
+    <version.derby>10.14.2.0</version.derby>
+    <derby.path>${user.home}/.m2/repository/org/apache/derby/derby</derby.path>
+    <liberty.var.derby.lib>${derby.path}/${version.derby}/derby-${version.derby}.jar</liberty.var.derby.lib>
+        
   </properties>
 
   <dependencies>
@@ -58,6 +63,11 @@
         <version>1.7.30</version>
     </dependency>
     <!-- end::jaeger[] -->
+    <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derby</artifactId>
+        <version>${version.derby}</version>
+    </dependency>
   </dependencies>
 
   <build>

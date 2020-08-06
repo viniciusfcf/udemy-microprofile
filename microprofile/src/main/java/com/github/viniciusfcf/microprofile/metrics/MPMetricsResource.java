@@ -12,7 +12,6 @@ import org.eclipse.microprofile.metrics.Counter;
 import org.eclipse.microprofile.metrics.MetricRegistry;
 import org.eclipse.microprofile.metrics.annotation.Metric;
 import org.eclipse.microprofile.metrics.annotation.RegistryType;
-import org.eclipse.microprofile.metrics.annotation.SimplyTimed;
 
 @Path("/mp-metrics")
 @ApplicationScoped
