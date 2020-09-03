@@ -17,9 +17,8 @@
     <feature>mpFaultTolerance-2.1</feature>
     <feature>mpHealth-2.2</feature>
     <feature>jpa-2.2</feature>
-    
+    <feature>mpJwt-1.1</feature>
     <!-- 
-
     <feature>mpHealth-2.1</feature>
     <feature>mpMetrics-2.2</feature> 
     -->
@@ -33,11 +32,14 @@
   <variable name="default.https.port" defaultValue="9443"/>
 
   <httpEndpoint host="*" httpPort="${default.http.port}" httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
-  <keyStore id="defaultKeyStore" password="OpenLiberty" />
 
   <webApplication location="liberty.war" contextRoot="/">
      <classloader apiTypeVisibility="api,ibm-api,spec,stable,third-party"/>
   </webApplication>
 
-  
+  <!-- The MP JWT configuration that injects the caller's JWT into a
+         ResourceScoped bean for inspection. -->
+    <mpJwt id="jwtUserConsumer" keyName="default" audiences="simpleapp"
+           issuer="${jwt.issuer}"/>
+
 </server>

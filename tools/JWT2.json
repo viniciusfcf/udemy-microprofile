@@ -1,0 +1,11 @@
+{
+    "iss": "http://localhost:8180/auth/realms/ifood",
+    "jti": "a-123",
+    "sub": "ID do keyclock2",
+    "upn": "outro upn",
+    "preferred_username": "Joao",
+    "aud": "rbac",
+    "groups": [
+        "proprietario"
+    ]
+}

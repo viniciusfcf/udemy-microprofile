@@ -1,0 +1,11 @@
+{
+    "iss": "http://localhost:8180/auth/realms/ifood",
+    "jti": "a-123",
+   
+   
+    "aud": "using-jwt-rbac",
+    "birthdate": "2001-07-13",
+    "groups": [
+        "proprietario"
+    ]
+}
