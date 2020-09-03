@@ -1,0 +1,38 @@
+---
+    openapi: 3.0.1
+    info:
+      title: Titulo da minha aplicacao do YAML
+    paths:
+      /enderecos-2:
+        get:
+          tags:
+          - enderecoYAML
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/EnderecoDTO'
+      
+    components:
+      schemas:
+        EnderecoDTO:
+          required:
+          - cep
+          type: object
+          properties:
+            cep:
+              type: string
+              nullable: false
+            numero:
+              format: int32
+              maximum: 9999
+              minimum: 0
+              type: integer
+            rua:
+              description: Nome completo da rua
+              type: string
+       

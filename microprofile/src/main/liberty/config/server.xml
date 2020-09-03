@@ -18,10 +18,7 @@
     <feature>mpHealth-2.2</feature>
     <feature>jpa-2.2</feature>
     <feature>mpJwt-1.1</feature>
-    <!-- 
-    <feature>mpHealth-2.1</feature>
-    <feature>mpMetrics-2.2</feature> 
-    -->
+      <feature>mpOpenAPI-1.1</feature>
   </featureManager>
 
   <applicationManager autoExpand="true" />
