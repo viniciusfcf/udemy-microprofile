@@ -1,4 +1,4 @@
-package com.github.viniciusfcf.jwt;
+package com.github.viniciusfcf.microprofile.jwt;
 
 
 import javax.annotation.security.DenyAll;
